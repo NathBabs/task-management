@@ -80,11 +80,11 @@ yarn docker:stop
 
 ### API Endpoints
 Tasks
-   - `GET /api/v1/tasks` - List all tasks (with pagination)
-   - `POST /api/v1/tasks` - Create a new task
-   - `GET /api/v1/tasks/:id` - Get task details
-   - `PATCH /api/v1/tasks/:id` - Update a task
-   - `DELETE /api/v1/tasks/:id` - Delete a task
+   - `GET /tasks` - List all tasks (with pagination)
+   - `POST /tasks` - Create a new task
+   - `GET /tasks/:id` - Get task details
+   - `PATCH /tasks/:id` - Update a task
+   - `DELETE /tasks/:id` - Delete a task
 
 
 ### WebSocket Testing (via Postman)
