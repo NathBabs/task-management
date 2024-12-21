@@ -1,0 +1,76 @@
+
+version: '3.8'
+name: task-management-system
+
+services:
+  # api:
+  #   build:
+  #     context: .
+  #     dockerfile: Dockerfile
+  #   ports:
+  #     - "8080:3000"
+  #   environment:
+  #     - NODE_ENV=development
+  #     - PORT=8080
+  #     - COUCHBASE_HOST=couchbase
+  #     - COUCHBASE_USER=Administrator
+  #     - COUCHBASE_PASSWORD=password123
+  #     - REDIS_HOST=redis
+  #     - REDIS_PORT=6379
+  #   depends_on:
+  #     - couchbase
+  #     - redis
+  #   networks:
+  #     - task-network
+  #   restart: unless-stopped
+  #   volumes:
+  #     - .:/app
+  #     - /app/node_modules
+      
+  couchbase:
+    image: couchbase:latest
+    ports:
+      - "8091-8096:8091-8096"
+      - "11210-11211:11210-11211"
+    volumes:
+      - couchbase_data:/opt/couchbase/var
+    networks:
+      - task-network
+    healthcheck:
+      test: ["CMD", "/opt/couchbase/bin/couchbase-cli", "server-info", "-c", "localhost:8091"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+
+  redis:
+    image: redis:alpine
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis_data:/data
+    networks:
+      - task-network
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+
+  # redis-commander:
+  #   image: ghcr.io/joeferner/redis-commander:latest
+  #   environment:
+  #     - REDIS_HOSTS=local:redis:6379
+  #   ports:
+  #     - "8081:8081"
+  #   networks:
+  #     - task-network
+  #   depends_on:
+  #     - redis
+
+volumes:
+  couchbase_data:
+  redis_data:
+
+networks:
+  task-network:
+    driver: bridge
