@@ -52,7 +52,7 @@ yarn start:dev
 
 The API will be available at:
 
-REST API: [http://localhost:8080/api/v1](http://localhost:8080/) <br>
+REST API: [http://localhost:8080/](http://localhost:8080/) <br>
 Swagger Docs:[ http://localhost:8080/api/docs](http://localhost:8080/api/docs) <br  >
 WebSocket:[ ws://localhost:8080/socket.io/?EIO=4&transport=websocket]( ws://localhost:8080/socket.io/?EIO=4&transport=websocket)
 
