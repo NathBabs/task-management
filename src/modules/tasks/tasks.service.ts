@@ -89,16 +89,6 @@ export class TasksService {
         'Successfully listed tasks',
       );
 
-      // return {
-      //   message: "Successfully listed tasks",
-      //   data: result.rows,
-      //   meta: {
-      //     total: countResult.rows[0].total,
-      //     page: +query.page,
-      //     limit: +query.limit,
-      //     totalPages: Math.ceil(countResult.rows[0].total / query.limit),
-      //   },
-      // };
     } catch (error) {
       this.logger.error('Error fetching tasks:', JSON.stringify(error));
       throw new BadRequestException('Failed to fetch tasks', error);

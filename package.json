@@ -29,8 +29,6 @@
     "setup:node": "ts-node scripts/setup.ts",
     "infra:start": "yarn docker:start && yarn setup",
     "infra:stop": "yarn docker:stop",
-    "verify:deps": "yarn list --pattern '@nestjs/platform-socket.io|socket.io'",
-    "docker:verify": "docker exec task-management-system-api-1 yarn verify:deps",
     "commit": "cz"
   },
   "dependencies": {
