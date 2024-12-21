@@ -116,3 +116,8 @@ src/
 ```
 
 ### Sample Screenshots
+
+- Create Task api request <br> <br> <img width="1146" alt="Screenshot 2024-12-21 at 16 16 46" src="https://github.com/user-attachments/assets/bf7fb1c0-75eb-498c-bd94-17e8a96742c7" />
+
+- TASK_CREATED websocket event received <br> <br> <img width="1440" alt="Screenshot 2024-12-21 at 16 16 23" src="https://github.com/user-attachments/assets/f3ec4c90-bccd-4254-9034-b9c92f7e3795" />
+
